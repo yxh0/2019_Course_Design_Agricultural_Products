@@ -20,7 +20,7 @@ public:
 	User(User& u);        //拷贝构造
 	~User() {};           //析构函数
 	void Register();      //用户注册
-	void Enter();         //用户注册
+	void Login();         //用户登录
 
 
 };
