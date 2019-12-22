@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 using namespace std;
 
 class GOODS
@@ -18,9 +19,9 @@ protected:
 
 public:
 	GOODS();//goods不带参数构造
-	GOODS(char* na, double pri, int sale, int sur);//goods带参数构造
-	GOODS(GOODS& l);//goods拷贝构造
-	~GOODS(){};
+	GOODS(string na, double pri, int sale, int sur);//goods带参数构造
+	GOODS(const GOODS& l);//goods拷贝构造
+	~GOODS() {};
 	void diplaygoods();
 	void Insert(char* na, double pri, int sale, int sur);//输入商品信息
 	void Changename(char* na);//更改名称
@@ -34,15 +35,23 @@ public:
 	void Insertdiscuss(char* dis);//写入评论char*
 	void Insertdiscuss(string dis);//写入评论string
 	void displaydiscuss();//打印评论
+	friend ostream& operator << (ostream& os, const GOODS& g)
+	{
+		os << g.name << endl;
+		os << "Price: " << g.price << endl;
+		os << "Surplus: " << g.surplus << endl;
+		os << "Sale volume: " << g.sales << endl;
+		return os;
+	}
 };
 
-class Meat:public GOODS//肉类
+class Meat :public GOODS//肉类
 {};
 
-class Fish:public GOODS//鱼类
+class Fish :public GOODS//鱼类
 {};
 
-class Vegetable:public GOODS//蔬菜类
+class Vegetable :public GOODS//蔬菜类
 {};
 
 #endif
