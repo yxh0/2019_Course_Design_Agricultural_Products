@@ -7,7 +7,7 @@ GOODS::GOODS()//goods不带参数构造
 	discusssum = 0;
 }
 
-GOODS::GOODS(char* na, double pri, int sale, int sur)//goods带参数构造
+GOODS::GOODS(string na, double pri, int sale, int sur)//goods带参数构造
 {
 	name = na;
 	price = pri;
@@ -15,7 +15,7 @@ GOODS::GOODS(char* na, double pri, int sale, int sur)//goods带参数构造
 	surplus = sur;
 }
 
-GOODS::GOODS(GOODS& l)//goods拷贝构造
+GOODS::GOODS(const GOODS& l)//goods拷贝构造
 {
 	name = l.name;
 	price = l.price;
@@ -25,7 +25,7 @@ GOODS::GOODS(GOODS& l)//goods拷贝构造
 
 void GOODS::diplaygoods()
 {
-	cout<<"名称: "<<name<<", 价格: "<<price<<", 销售量: "<<sales<<", 剩余量: "<<surplus<<endl;
+	cout << "名称: " << name << ", 价格: " << price << ", 销售量: " << sales << ", 剩余量: " << surplus << endl;
 }
 
 void GOODS::Insert(char* na, double pri, int sale, int sur)//输入商品信息
@@ -37,28 +37,44 @@ void GOODS::Insert(char* na, double pri, int sale, int sur)//输入商品信息
 }
 
 void GOODS::Changename(char* na)//更改名称
-{name = na;}
+{
+	name = na;
+}
 
 void GOODS::Changeprice(double pri)//更改价格
-{price = pri;}
+{
+	price = pri;
+}
 
 void GOODS::Changesales(int sale)//更改销售量
-{sales = sale;}
+{
+	sales = sale;
+}
 
 void GOODS::Changesurplus(int sur)//更改剩余量
-{surplus = sur;}
+{
+	surplus = sur;
+}
 
 string GOODS::Getname()//提取名称
-{return name;}
+{
+	return name;
+}
 
 double GOODS::Getprice()//提取价格
-{return price;}
+{
+	return price;
+}
 
 int GOODS::Getsales()//提取销售量
-{return sales;}
+{
+	return sales;
+}
 
 int GOODS::Getsurplus()//提取剩余量
-{return surplus;}
+{
+	return surplus;
+}
 
 void GOODS::Insertdiscuss(char* dis)//写入评论char*
 {
@@ -74,12 +90,21 @@ void GOODS::Insertdiscuss(string dis)//写入评论string
 
 void GOODS::displaydiscuss()//打印评论
 {
-	for (int i = 0;i < discusssum;++i)
-		cout<<discuss[i]<<endl;
+	for (int i = 0; i < discusssum; ++i)
+		cout << discuss[i] << endl;
 }
+
+/*ostream& operator << (ostream& os, const GOODS& g)
+{
+	os << g.name << endl;
+	os << "Price: " << g.price << endl;
+	os << "Surplus: " << g.surplus << endl;
+	os << "Sale volume: " << g.sales << endl;
+	return os;
+}*/
 /////////////////////////////////////////////////////
 
-void main()
+/*void main()
 {
 //	goods a("大面筋", 4.5, 2, 200);
 //	a.diplaygoods();
@@ -100,4 +125,4 @@ void main()
 	b.Insertdiscuss("一般");
 	b.Insertdiscuss("很差，不建议购买");
 	b.displaydiscuss();
-}
+}*/
