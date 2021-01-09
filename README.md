@@ -27,7 +27,7 @@
 
 #### 成员进度
 
-![image](..images/进度.jpg)
+![image](images/进度.jpg)
 
 
 
