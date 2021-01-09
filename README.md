@@ -33,4 +33,4 @@
 
 ### UML image
 
-![image](https://raw.githubusercontent.com/yxh0/2019_Course_Design_Agricultural_Products/master/images/ClassDiagram1.jpg)
+![image](images/ClassDiagram1.jpg)
