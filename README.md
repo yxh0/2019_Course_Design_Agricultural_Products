@@ -27,7 +27,7 @@
 
 #### 成员进度
 
-![image](https://raw.githubusercontent.com/yxh0/2019_Course_Design_Agricultural_Products/master/images/%E8%BF%9B%E5%BA%A6.jpg)
+![image](..images/进度.jpg)
 
 
 
